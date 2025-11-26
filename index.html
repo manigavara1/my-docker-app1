@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nuel Global - Flyer</title>
+  <style>
+    :root{
+      --blue-dark:#083e63;
+      --blue-mid:#0f73a8;
+      --blue-light:#67c1e6;
+      --accent:#f79a1f;
+      --card-width:900px;
+    }
+    body{
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg,#e6f6fb 0%, #cdeff9 35%, #e8f7ff 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      margin:0;
+      padding:20px;
+    }
+
+    .flyer{
+      width:100%;
+      max-width:var(--card-width);
+      background:linear-gradient(180deg,#e9f6fb 0%, #cdebf7 100%);
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(3,15,30,0.15);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:0;
+    }
+
+    /* Left column */
+    .left{
+      padding:28px;
+      background:linear-gradient(180deg,var(--blue-light), #9fdff6);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      color:white;
+      position:relative;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo img{ height:56px; width:auto; }
+    .logo .brand{
+      font-weight:700;
+      font-size:22px;
+      letter-spacing:0.5px;
+    }
+    .logo .tag{ font-size:12px; opacity:0.95; margin-top:-4px; }
+
+    .round-photo{
+      margin-top:18px;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      overflow:hidden;
+      border:10px solid rgba(2,45,77,0.6);
+      box-shadow:0 6px 20px rgba(2,45,77,0.18);
+      align-self:center;
+      background:#fff;
+    }
+    .round-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    .cta-left{
+      margin-top:20px;
+      font-weight:700;
+      font-size:22px;
+      line-height:1.1;
+      text-align:center;
+      text-transform:uppercase;
+      letter-spacing:0.6px;
+    }
+
+    .left-footer{
+      margin-top:20px;
+      font-weight:700;
+      color:#01263f;
+      font-size:20px;
+      text-align:center;
+      background:rgba(255,255,255,0.12);
+      padding:10px;
+      border-radius:8px;
+    }
+
+    /* Right column */
+    .right{
+      padding:28px;
+      background:linear-gradient(180deg,#f4f7fa 0%, #e8f1f7 100%);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .headline{
+      background:var(--blue-dark);
+      color:white;
+      padding:22px;
+      border-radius:6px;
+      font-weight:800;
+      font-size:28px;
+      line-height:1.05;
+      text-transform:uppercase;
+      text-align:left;
+    }
+
+    .qr-wrap{
+      display:flex;
+      gap:18px;
+      margin-top:18px;
+      align-items:center;
+    }
+
+    .qr-img{
+      width:230px;
+      height:230px;
+      background:#fff;
+      padding:12px;
+      border-radius:8px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .qr-img img{ width:100%; height:100%; object-fit:contain; display:block; }
+
+    .right-text{
+      flex:1;
+      font-weight:700;
+      color:var(--blue-dark);
+      padding-left:8px;
+    }
+    .right-text .top-line{
+      font-size:20px;
+      color:#13425a;
+      text-transform:uppercase;
+    }
+    .right-text .big{
+      font-size:28px;
+      margin-top:10px;
+      color:var(--blue-dark);
+    }
+    .right-text p{
+      margin:8px 0 0;
+      font-size:14px;
+      font-weight:700;
+      color:#0e3b50;
+    }
+
+    .contact-bar{
+      margin-top:18px;
+      background:var(--blue-dark);
+      color:white;
+      padding:16px;
+      border-radius:8px;
+      display:flex;
+      gap:20px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .contact-item{ display:flex; gap:10px; align-items:center; }
+    .contact-item svg{ width:20px; height:20px; opacity:0.95; }
+    .contact-item .text{ font-weight:700; font-size:16px; }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .flyer{ grid-template-columns: 1fr; }
+      .round-photo{ width:200px; height:200px; align-self:center; }
+      .qr-img{ width:180px; height:180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flyer" role="region" aria-label="Nuel Global flyer">
+    <!-- LEFT -->
+    <div class="left">
+      <div>
+        <div class="logo">
+          <!-- replace logo.png with your real logo file -->
+          <img src="logo.png" alt="Nuel Global logo" onerror="this.style.display='none'">
+          <div>
+            <div class="brand">NUEL GLOBAL</div>
+            <div class="tag">Neo Universal Enterprise Labs</div>
+          </div>
+        </div>
+
+        <div class="round-photo" style="margin-top:22px;">
+          <!-- replace person.jpg with your actual photo (or use attached image) -->
+          <img src="person.jpg" alt="Person working" onerror="this.style.display='none'">
+        </div>
+
+        <div class="cta-left">DON'T WAIT —<br/>REGISTER NOW<br/>FOR FREE DEMO SESSION</div>
+      </div>
+
+      <div class="left-footer">
+        Looking for a job change<br/>or want to upskill?
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <div>
+        <div class="headline">LOOKING FOR A JOB CHANGE OR WANT TO UPSKILL?</div>
+
+        <div class="qr-wrap">
+          <div class="qr-img">
+            <!-- replace qr.png with your QR image -->
+            <img src="qr.png" alt="QR code - register" onerror="this.style.display='none'">
+          </div>
+
+          <div class="right-text">
+            <div class="top-line">DON'T WAIT —</div>
+            <div class="big">REGISTER NOW FOR FREE DEMO SESSION</div>
+            <p style="margin-top:14px; font-weight:600; font-size:13px;">
+              Scan QR to register or contact via phone / email below.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-bar" aria-hidden="false">
+        <div class="contact-item">
+          <!-- phone icon -->
+          <svg viewBox="0 0 24 24"><path fill="white" d="M6.6 10.2c1.1 2.2 2.9 4 5.1 5.1l1.6-1.6c.3-.3.8-.4 1.2-.2 1.3.5 2.8.8 4.3.8.6 0 1 .5 1 1V20c0 .6-.4 1-1 1C9.9 21 3 14.1 3 5c0-.6.4-1 1-1h3.1c.6 0 1 .4 1 1 0 1.5.3 3 .8 4.3.1.4 0 .9-.2 1.2L6.6 10.2z"/></svg>
+          <div class="text">7997224342</div>
+        </div>
+
+        <div class="contact-item">
+          <!-- email icon -->
+          <svg viewBox="0 0 24 24"><path fill="white" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 1.99 2H20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+          <div class="text">info@nuelglobal.com</div>
+        </div>
+
+        <div class="contact-item">
+          <!-- web icon -->
+          <svg viewBox="0 0 24 24"><path fill="white" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 17.9c-1.9 0-3.75-.7-5.15-1.9h10.3c-1.4 1.2-3.25 1.9-5.15 1.9zm6.1-3.1H5.4c.2-1.3.9-2.5 2-3.3.4-.3.9-.5 1.5-.6l.6-.1c.2 0 .3-.2.3-.4 0-1.7 1.4-3.2 3.1-3.2s3.1 1.5 3.1 3.2c0 .2.1.4.3.4l.6.1c.6.1 1.1.3 1.5.6 1.1.8 1.8 2 2 3.3z"/></svg>
+          <div class="text">www.nuelglobal.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- If you prefer to directly show your attached image instead of recreating, uncomment below and give correct filename:
+  <div style="max-width:900px;margin:30px auto;">
+    <img src="NUEL_GLOBAL_SCANNER.jpeg" alt="original flyer" style="width:100%;height:auto;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.12)" />
+  </div>
+  -->
+
+</body>
+</html>
